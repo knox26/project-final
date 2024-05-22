@@ -26,7 +26,7 @@ scraped_articles = []
 
 def reduce_paragraph(paragraph, num_sentences=2):
     """Reduces a paragraph to a specified number of sentences using LexRank summarization."""
-    parser = PlaintextParser.from_string(paragraph, tokenizer("english"))
+    parser = PlaintextParser.from_string(paragraph, tokenizer.tokenize)
     summarizer = LexRankSummarizer()
     summary = summarizer(parser.document, num_sentences)
     reduced_paragraph = ' '.join(str(sentence) for sentence in summary)
