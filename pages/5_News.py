@@ -101,7 +101,7 @@ for url in urls:
 
             scraped_articles.append(article_data)
         except Exception as e:
-            print("Error occurred while processing an article:", str(e))
+            st.error("Error occurred while processing an article:", str(e))
 
 # ...
 st.markdown("<h1 class='Title' >News Aticles</h1>", unsafe_allow_html=True)
