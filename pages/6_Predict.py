@@ -24,8 +24,8 @@ Stock = st.session_state['Stock']
 st.write("prediction is available only for rellience with accurecy of 50%")
 backdata= 7
 
-load_existing_model = True  # Define the variable load_existing_model
-save_model = True  # Define the variable save_model
+load_existing_model = True  
+save_model = True  
 if load_existing_model and os.path.exists(str (Stock) + "lstm_model.h5"):
     regressor = load_model( str (Stock) + "lstm_model.h5")
     PredData = st.session_state['PredData']
