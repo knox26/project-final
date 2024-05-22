@@ -12,7 +12,14 @@ import pandas as pd
 import math
 from sklearn.metrics import mean_squared_error
 
+st.set_page_config(
+    page_title="Stock X",
+    page_icon="🧊",
+    layout="wide",
+    
+)
 
+st.write("prediction is available only for rellience with accurecy of 50%")
 backdata= 7
 
 PredData = st.session_state['PredData']
