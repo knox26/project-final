@@ -1,0 +1,46 @@
+@import url(https://fonts.bunny.net/css?family=aldrich:400);
+
+.Title {
+  font-family: "Aldrich", sans-serif;
+  font-weight: 300;
+  color: rgb(146, 243, 49);
+  transform: translateY(-70px);
+  text-align: center;
+  padding: 0%;
+
+  font-size: 5vw;
+  border-bottom: cyan 3px solid;
+}
+.Heading {
+  font-size: 2.5vw;
+}
+.img {
+  width: 35vw;
+  height: 25vw;
+  transform: translateY(50px);
+  border-radius: 10px;
+}
+
+.hero {
+  display: flex;
+  gap: 20px;
+  transform: translateY(-15px);
+}
+
+i {
+  color: cyan;
+}
+
+.mainpage {
+  font-family: "comicmono", monospace;
+
+  padding-left: 25px;
+  padding-right: 10px;
+  border-radius: 10px;
+  /* background: #201e1e;
+  box-shadow: inset 20.42px 20.42px 49px #171616,
+    inset -20.42px -20.42px 49px #292626; */
+  background: linear-gradient(145deg, #2b4372, #1d2e4e);
+  box-shadow: inset 0.3px 0.3px 44px #121c30, inset -0.3px -0.3px 44px #365490;
+  font-size: 1.25vw;
+}

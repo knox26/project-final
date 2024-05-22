@@ -1,0 +1,22 @@
+@import url(https://fonts.bunny.net/css?family=aldrich:400);
+
+.Title {
+  font-family: "Aldrich", sans-serif;
+  font-weight: 300;
+  color: rgb(146, 243, 49);
+  transform: translateY(-50px);
+  text-align: center;
+  padding: 0%;
+
+  font-size: 5.5vw;
+  border-bottom: cyan 3px solid;
+}
+
+.Heading {
+  font-family: "Aldrich", sans-serif;
+  color: rgb(146, 243, 49);
+  transform: translateY(-50px);
+  text-align: center;
+  padding: 0%;
+  border-bottom: cyan 3px solid;
+}
