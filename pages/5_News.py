@@ -5,7 +5,7 @@ from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import streamlit as st
-
+import os
 
 
 st.set_page_config(
@@ -16,7 +16,7 @@ st.set_page_config(
 )
 
 
-with open('pages\styles5.css') as f:
+with open(os.path.join('pages', 'styles2.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
 

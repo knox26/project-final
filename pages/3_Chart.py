@@ -31,11 +31,15 @@ def calculate_bollinger_bands(Viz, period: int = 20):
         f'Bollinger Band Lower {period}': sma - (std_dev * 2)
     }).dropna()
 
+bb_data = calculate_bollinger_bands(Viz, period=20)
+
 def calculate_sma(Viz, period: int = 20):
     return pd.DataFrame({
         'time': Viz['Date'],
         f'SMA {period}': Viz['Close'].rolling(window=period).mean()
     }).dropna()
+
+sma_data = calculate_sma(Viz, period=20)
 
 def calculate_ema(Viz, period: int = 20):
     return pd.DataFrame({
@@ -43,7 +47,7 @@ def calculate_ema(Viz, period: int = 20):
         f'EMA {period}': Viz['Close'].ewm(span=period, adjust=False).mean()
     })
 
-
+ema_data = calculate_ema(Viz, period=20)
 
     # Add this to the visualization section
     
@@ -88,7 +92,7 @@ elif selected == 'B Bands':
     
     chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
-    bb_data = calculate_bollinger_bands(Viz, period=20)
+    
     bb_upper_line = chart.create_line('Bollinger Band Upper 20', color='#6e3fe7', price_label=False, width=1.4, price_line=False)
     bb_upper_line.set(bb_data)
     bb_lower_line = chart.create_line('Bollinger Band Lower 20',color='#6e3fe7',price_label=False, width=1.4 ,price_line=False)
@@ -103,7 +107,7 @@ elif selected == 'SMA':
     chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
     line = chart.create_line('SMA 20', color='#62D6E4', price_label=False, width=1.2 , price_line=False)
-    sma_data = calculate_sma(Viz, period=20)
+    
     line.set(sma_data)
     chart.load()
     
@@ -112,7 +116,7 @@ else:
     
     chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
-    ema_data = calculate_ema(Viz, period=20)
+    
     ema_line = chart.create_line('EMA 20',color='red',price_label=False, width=1.2, price_line=False, )
     ema_line.set(ema_data)
     chart.load()
