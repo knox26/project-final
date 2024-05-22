@@ -6,7 +6,8 @@ from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import streamlit as st
 import os
-
+import nltk.data
+nltk.data.path.append('./nltk_data/tokenizers')
 
 st.set_page_config(
         page_title="Stock X",
