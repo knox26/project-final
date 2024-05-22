@@ -1,6 +1,6 @@
 
 import streamlit as st
-
+import os
 import yfinance as yf
 import datetime
 from datetime import date
@@ -15,7 +15,9 @@ st.set_page_config(
     layout="wide",
     
 )
-with open('styles.css') as f:
+
+
+with open(os.path.join('styles.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 

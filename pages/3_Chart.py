@@ -3,7 +3,7 @@ import pandas as pd
 from lightweight_charts.widgets import StreamlitChart
 from streamlit_option_menu import option_menu
 import streamlit as st
-
+import os
 
 st.set_page_config(
         page_title="Stock X",
@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 
-with open('pages\styles5.css') as f:
+with open(os.path.join('pages', 'styles5.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
 Viz = st.session_state['Viz']

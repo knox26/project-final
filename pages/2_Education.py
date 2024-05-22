@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+import os
 
 st.set_page_config(
         page_title="Stock X",
@@ -7,7 +8,8 @@ st.set_page_config(
         layout="wide",
         initial_sidebar_state="expanded",
 )
-with open('pages\styles2.css') as f:
+
+with open(os.path.join('pages', 'styles2.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
     

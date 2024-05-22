@@ -4,6 +4,7 @@ from tradingview_ta import TA_Handler, Interval
 import pandas as pd
 from alpha_vantage.fundamentaldata import FundamentalData
 from finvizfinance.quote import finvizfinance
+import os
 
 st.set_page_config(
         page_title="Stock X",
@@ -13,7 +14,7 @@ st.set_page_config(
 )
 
 
-with open('pages\styles5.css') as f:
+with open(os.path.join('pages', 'styles2.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
 st.markdown("<h1 class='Title' >Analyze</h1>", unsafe_allow_html=True)
