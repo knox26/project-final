@@ -79,14 +79,14 @@ selected = option_menu(
 
 if selected == 'Chart':
     
-    chart = StreamlitChart(width=915, height=455)
+    chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
     chart.load()
     
         # Adjust padding as needed
 elif selected == 'B Bands':
     
-    chart = StreamlitChart(width=915, height=455)
+    chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
     bb_data = calculate_bollinger_bands(Viz, period=20)
     bb_upper_line = chart.create_line('Bollinger Band Upper 20', color='#6e3fe7', price_label=False, width=1.4, price_line=False)
@@ -100,7 +100,7 @@ elif selected == 'B Bands':
 
 elif selected == 'SMA':
     
-    chart = StreamlitChart(width=915, height=455)
+    chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
     line = chart.create_line('SMA 20', color='#62D6E4', price_label=False, width=1.2 , price_line=False)
     sma_data = calculate_sma(Viz, period=20)
@@ -110,7 +110,7 @@ elif selected == 'SMA':
 
 else:
     
-    chart = StreamlitChart(width=915, height=455)
+    chart = StreamlitChart(width=930, height=470)
     chart.set(Viz)
     ema_data = calculate_ema(Viz, period=20)
     ema_line = chart.create_line('EMA 20',color='red',price_label=False, width=1.2, price_line=False, )
