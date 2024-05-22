@@ -2,20 +2,21 @@ import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.lex_rank import LexRankSummarizer
 import streamlit as st
-import os
-import nltk.data
+
+
+
 st.set_page_config(
         page_title="Stock X",
         page_icon="🧊",
         layout="wide",
         initial_sidebar_state="expanded",
 )
-tokenpath= os.path.join('pages', 'punkt', 'english.pickle')
-tokenizer = nltk.data.load(tokenpath)
 
-with open(os.path.join('pages', 'styles2.css')) as f:
+
+with open(os.path.join('pages', 'styles5.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
 
@@ -26,7 +27,7 @@ scraped_articles = []
 
 def reduce_paragraph(paragraph, num_sentences=2):
     """Reduces a paragraph to a specified number of sentences using LexRank summarization."""
-    parser = PlaintextParser.from_string(paragraph, tokenizer)
+    parser = PlaintextParser.from_string(paragraph, Tokenizer("english"))
     summarizer = LexRankSummarizer()
     summary = summarizer(parser.document, num_sentences)
     reduced_paragraph = ' '.join(str(sentence) for sentence in summary)
@@ -100,7 +101,7 @@ for url in urls:
 
             scraped_articles.append(article_data)
         except Exception as e:
-            st.error("Error occurred while processing an article:" + str(e))
+            print("Error occurred while processing an article:", str(e))
 
 # ...
 st.markdown("<h1 class='Title' >News Aticles</h1>", unsafe_allow_html=True)
