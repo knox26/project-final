@@ -58,7 +58,7 @@ st.session_state['Stock'] = Stock
 #downloading data
 
 df = download_df(Stock, start_date, end_date)
-PredData =yf.download(Stock, start="2017-01-01", end=today, interval="1mo")
+PredData =yf.download(Stock, start="2017-01-01", end=today, interval="1mo", progress=False)
 Viz = df.copy()
 Viz['Date'] = Viz.index.strftime('%Y-%m-%d')
 st.session_state['Viz']= Viz
