@@ -22,7 +22,9 @@ with open(os.path.join('pages', 'styles5.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
 
 # Check if the 'punkt' package is available, and download it if it's not.
-if not nltk.data.find('tokenizers/punkt'):
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
     nltk.download('punkt')
 
 urls = ["https://www.moneycontrol.com/news/tags/companies.html", "https://www.moneycontrol.com/news/business.html"]
