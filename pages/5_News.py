@@ -7,7 +7,10 @@ from sumy.summarizers.lex_rank import LexRankSummarizer
 import streamlit as st
 import os
 import nltk.data
-nltk.data.path.append('./nltk_data/tokenizers')
+punkt_path = os.path.join(os.path.dirname(__file__), 'punkt')
+
+# Add the path to nltk.data.path
+nltk.data.path.append(punkt_path)
 
 st.set_page_config(
         page_title="Stock X",
