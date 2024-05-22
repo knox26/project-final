@@ -19,6 +19,8 @@ st.set_page_config(
     
 )
 
+Stock = st.session_state['Stock']
+
 st.write("prediction is available only for rellience with accurecy of 50%")
 backdata= 7
 
