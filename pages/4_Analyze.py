@@ -68,28 +68,28 @@ if selected == 'Fundamental Data':
     st.write("<br>", unsafe_allow_html=True)
 
     if flag==False:
+        key = ' 4BLVRHXAUWVRIZTR'
+        fd = FundamentalData(key,output_format = 'pandas')
+        st.subheader('Balance Sheet')
+        balance_sheet = fd.get_balance_sheet_annual(Stock)[0]
+        bs = balance_sheet.T[2:]
+        bs.columns = list(balance_sheet.T.iloc[0])
+        st.write(bs)
         
-            key = ' 4BLVRHXAUWVRIZTR'
-            fd = FundamentalData(key, output_format='pandas')
-
-            st.subheader('Balance Sheet')
-            balance_sheet = fd.get_balance_sheet_annual(Stock)[0]
-            bs = balance_sheet.T[2:]
-            bs.columns = list(balance_sheet.T.iloc[0])
-            st.write(bs)
-
-            st.subheader('Income Statement')
-            income_statement = fd.get_income_statement_annual(Stock)[0]
-            is1 = income_statement.T[2:]
-            is1.columns = list(income_statement.T.iloc[0])
-            st.write(is1)
-
-            st.subheader('Cash Flow Statement')
-            cash_flow = fd.get_cash_flow_annual(Stock)[0]
-            cf = cash_flow.T[2:]
-            cf.columns = list(cash_flow.T.iloc[0])
-            st.write(cf)
-
+        st.subheader('Income Statement')
+        income_statement = fd.get_income_statement_annual(Stock)[0]
+        is1 = income_statement.T[2:]
+        is1.columns = list(income_statement.T.iloc[0])
+        st.write(is1)
+        
+        st.subheader('Cash Flow Statement')
+        cash_flow = fd.get_cash_flow_annual(Stock)[0]
+        cf = cash_flow.T[2:]
+        cf.columns = list(cash_flow.T.iloc[0])
+        st.write(cf)
+    elif flag == True:
+        st.write("buy premium version of alpha vantage to get fundamental data")
+        st.write("Basic version only supports US stock market data")
         
     elif flag == True:
         st.write("buy premium version of alpha vantage to get fundamental data")
