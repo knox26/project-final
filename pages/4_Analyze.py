@@ -68,7 +68,7 @@ if selected == 'Fundamental Data':
     st.write("<br>", unsafe_allow_html=True)
 
     if flag==False:
-        key = ' 4BLVRHXAUWVRIZTR'
+        key = '4BLVRHXAUWVRIZTR'
         fd = FundamentalData(key,output_format = 'pandas')
         st.subheader('Balance Sheet')
         balance_sheet = fd.get_balance_sheet_annual(Stock)[0]
@@ -91,9 +91,6 @@ if selected == 'Fundamental Data':
         st.write("buy premium version of alpha vantage to get fundamental data")
         st.write("Basic version only supports US stock market data")
         
-    elif flag == True:
-        st.write("buy premium version of alpha vantage to get fundamental data")
-        st.write("Basic version only supports US stock market data")
     # import finnhub
     # key = 'coa3m71r01qg9u90tsn0coa3m71r01qg9u90tsng'
     # finnhub_client = finnhub.Client(api_key=key)
