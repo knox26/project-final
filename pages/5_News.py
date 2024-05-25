@@ -42,7 +42,6 @@ def reduce_paragraph(paragraph, num_sentences=2):
     return reduced_paragraph
 
 
-@st.cache_resource
 def fetch_url_content(url):
     response = requests.get(url)
     if response.status_code == 200:
@@ -51,7 +50,7 @@ def fetch_url_content(url):
         print(f"Failed to retrieve the webpage {url}. Status code:", response.status_code)
         return None
 
-@st.cache_resource
+
 def fetch_article_data(url):
     html_doc = fetch_url_content(url)
     if html_doc is None:
