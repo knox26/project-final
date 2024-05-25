@@ -41,7 +41,7 @@ def reduce_paragraph(paragraph, num_sentences=2):
     reduced_paragraph = ' '.join(str(sentence) for sentence in summary)
     return reduced_paragraph
 
-
+st.cache_resource.clear()
 def fetch_url_content(url):
     response = requests.get(url)
     if response.status_code == 200:
