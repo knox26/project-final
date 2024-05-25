@@ -68,7 +68,7 @@ if selected == 'Fundamental Data':
     st.write("<br>", unsafe_allow_html=True)
 
     if flag==False:
-        try:
+        
             key = ' 4BLVRHXAUWVRIZTR'
             fd = FundamentalData(key, output_format='pandas')
 
@@ -90,8 +90,7 @@ if selected == 'Fundamental Data':
             cf.columns = list(cash_flow.T.iloc[0])
             st.write(cf)
 
-        except Exception as e:
-            st.error('API call limit reached. Please try again later.')
+        
     elif flag == True:
         st.write("buy premium version of alpha vantage to get fundamental data")
         st.write("Basic version only supports US stock market data")
