@@ -27,6 +27,8 @@ try:
 except LookupError:
     nltk.download('punkt')
 
+
+
 urls = ["https://www.moneycontrol.com/news/tags/companies.html", "https://www.moneycontrol.com/news/business.html"]
 
 scraped_articles = []
