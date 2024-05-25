@@ -9,7 +9,6 @@ import os
 import nltk
 
 
-
 st.set_page_config(
         page_title="Stock X",
         page_icon="🧊",
@@ -20,14 +19,12 @@ st.set_page_config(
 
 with open(os.path.join('pages', 'styles5.css')) as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True) 
+    
 
-# Check if the 'punkt' package is available, and download it if it's not.
-try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
-
-
+# try:
+#     nltk.data.find('tokenizers/punkt')
+# except LookupError:
+#     nltk.download('punkt')
 
 urls = ["https://www.moneycontrol.com/news/tags/companies.html", "https://www.moneycontrol.com/news/business.html"]
 
@@ -41,7 +38,8 @@ def reduce_paragraph(paragraph, num_sentences=2):
     reduced_paragraph = ' '.join(str(sentence) for sentence in summary)
     return reduced_paragraph
 
-st.cache_resource.clear()
+
+@st.cache_resource
 def fetch_url_content(url):
     response = requests.get(url)
     if response.status_code == 200:
@@ -50,7 +48,7 @@ def fetch_url_content(url):
         print(f"Failed to retrieve the webpage {url}. Status code:", response.status_code)
         return None
 
-
+@st.cache_resource
 def fetch_article_data(url):
     html_doc = fetch_url_content(url)
     if html_doc is None:
