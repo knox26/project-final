@@ -22,7 +22,7 @@ st.set_page_config(
 Stock = st.session_state['Stock']
 PredData = st.session_state['PredData']
 
-st.write("prediction is available only for rellience with accurecy of 50%")
+st.write("prediction is available only for rellience with accurecy of 64%")
 backdata= 7
 
 load_existing_model = True  
