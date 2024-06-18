@@ -40,7 +40,7 @@ def download_df(op, start_date, end_date):
 
 #taking input from user
 
-Stock = st.sidebar.text_input('Enter a Stock Symbol', placeholder ='STOCKTICKER.NS', value='TATAMOTORS.NS')
+Stock = st.sidebar.text_input('Enter a Stock Symbol', placeholder ='STOCKTICKER.NS', value='RELIANCE.NS')
 Stock = Stock.upper()
 today = datetime.date.today()
 duration = 1500
